@@ -284,7 +284,7 @@ let contacts1 = [
   { name: "Karim", phone: "998904567890" },
 ];
 
-contacts[3].phone += "(updated)"
+contacts[3].phone += "(updated)";
 
 // contacts[3].phone += " (updated)"
 
@@ -292,61 +292,63 @@ contacts[3].phone += "(updated)"
 // 21-masala:
 //Massivning ikkinchi obyektidagi age qiymatini ikki barobar oshiring.
 
- let people3 = [
+let people3 = [
   { name: "Ali", age: 20 },
   { name: "Vali", age: 25 },
-  { name: "Sami", age: 30 }
+  { name: "Sami", age: 30 },
 ];
+people[1].age *= 2;
 // people[1].age *= 2
-
 
 // ============
 // 22-masala:
 //Oxirgi obyektga yangi joinedAt maydonini qo'shing va qiymatini "2024-07-01" qilib belgilang.
 
- let employees2 = [
-  { name: "Ali" },
-  { name: "Vali" },
-  { name: "Sami" }
-];
-// employees[2].joinedAt = "2024-07-01"
+let employees2 = [{ name: "Ali" }, { name: "Vali" }, { name: "Sami" }];
 
+employees2[employees.length - 1] = "2024-07-01";
+
+// employees[2].joinedAt = "2024-07-01"
 
 // ============
 // 23-masala:
 //Massivdagi 1-obyektning name qiymatiga " (CEO)" qo'shimchasini qo'shing.
 
- let team = [
-  { name: "Ali" },
-  { name: "Vali" },
-  { name: "Sami" }
-];
-// team[0].name += " (CEO)"
+let team = [{ name: "Ali" }, { name: "Vali" }, { name: "Sami" }];
 
+team[0].name += " (CEO)";
+
+// team[0].name += "(CEO)"
 
 // ============
 // 24-masala:
 //3-obyektning price qiymatini 10% kamaytiring.
 
- let products = [
+let products = [
   { name: "Laptop", price: 1000 },
   { name: "Phone", price: 500 },
-  { name: "Tablet", price: 300 }
+  { name: "Tablet", price: 300 },
 ];
-// products[2].price *= 0.9
 
+products[2].price *= 0.9;
+
+// products[2].price *= 0.9
 
 // ============
 // 25-masala:
 //Barcha obyektlarning isActive qiymatini true qilib o'zgartiring.
 
- let users5 = [
+let users5 = [
   { name: "Ali", isActive: false },
   { name: "Vali", isActive: false },
-  { name: "Sami", isActive: false }
+  { name: "Sami", isActive: false },
 ];
-// users[i].isActive = true (barcha obyektlarda)
 
+users5.forEach((user) => {
+  user.isActive = true;
+});
+
+// users[i].isActive = true (barcha obyektlarda)
 
 // ============
 // 26-masala:
@@ -354,9 +356,12 @@ contacts[3].phone += "(updated)"
 let data = [
   { id: 1, name: "Ali", status: "Completed" },
   { id: 2, name: "Vali", status: "Pending" },
-  { id: 3, name: "Sami", status: "Completed" }
+  { id: 3, name: "Sami", status: "Completed" },
 ];
 
+if (data[1].status == "Pending") {
+  data[1].status == "Completed";
+}
 
 // ============
 // 27-masala:
@@ -364,9 +369,12 @@ let data = [
 let data1 = [
   { id: 1, name: "Ali", age: 35 },
   { id: 2, name: "Vali", age: 25 },
-  { id: 3, name: "Sami", age: 28 }
+  { id: 3, name: "Sami", age: 28 },
 ];
 
+if (data1[0].age > 30) {
+  data1[0].Senior = true;
+}
 
 // ============
 // 28-masala:
@@ -374,9 +382,12 @@ let data1 = [
 let data2 = [
   { id: 1, name: "Product1", price: 150 },
   { id: 2, name: "Product2", price: 80 },
-  { id: 3, name: "Product3", price: 60 }
+  { id: 3, name: "Product3", price: 60 },
 ];
 
+if (data2[data2.length - 1].price < 100) {
+  data2[data2.length - 1].price = 100;
+}
 
 // ============
 // 29-masala:
@@ -384,19 +395,27 @@ let data2 = [
 let data3 = [
   { id: 1, name: "Ali", role: "manager" },
   { id: 2, name: "Vali", role: "guest" },
-  { id: 3, name: "Sami", role: "supervisor" }
+  { id: 3, name: "Sami", role: "supervisor" },
 ];
-
-
+data3.forEach((user) => {
+  if (user.id < 3) {
+    user.role = "user";
+  } else {
+    user.role = "admin";
+  }
+});
 // ============
 // 30-masala:
 // 3-obyektning city qiymati "Toshkent" bo'lsa, uni "Samarqand" qilib o'zgartiring.
 let data4 = [
   { id: 1, name: "Ali", city: "Buxoro" },
   { id: 2, name: "Vali", city: "Namangan" },
-  { id: 3, name: "Sami", city: "Toshkent" }
+  { id: 3, name: "Sami", city: "Toshkent" },
 ];
 
+if (data4[2].city == "Toshkent") {
+  data4[2].city == "Samarqand";
+}
 
 // ============
 // 31-masala:
@@ -404,9 +423,14 @@ let data4 = [
 let data5 = [
   { id: 1, name: "Ali", salary: 900 },
   { id: 2, name: "Vali", salary: 1200 },
-  { id: 3, name: "Sami", salary: 800 }
+  { id: 3, name: "Sami", salary: 800 },
 ];
 
+data5.forEach((check) => {
+  if (check.salary < 1000) {
+    check.low = "";
+  }
+});
 
 // ============
 // 32-masala:
@@ -414,9 +438,12 @@ let data5 = [
 let data6 = [
   { id: 1, name: "Ali", email: "ali@yahoo.com" },
   { id: 2, name: "Vali", email: "vali@gmail.com" },
-  { id: 3, name: "Sami", email: "sami@mail.com" }
+  { id: 3, name: "Sami", email: "sami@mail.com" },
 ];
 
+if (data6[1].email.includes("@gmail.com")) {
+  data6[1].email = "vali@gmail.com (verified)";
+}
 
 // ============
 // 33-masala:
@@ -424,9 +451,10 @@ let data6 = [
 let data7 = [
   { id: 1, name: "Ali" },
   { id: 2, name: "Vali" },
-  { id: 3, name: "Sami" }
+  { id: 3, name: "Sami" },
 ];
 
+data7[data7.length - 1].lastLogin = "17.12.2024";
 
 // ============
 // 34-masala:
@@ -434,38 +462,55 @@ let data7 = [
 let data8 = [
   { id: 1, name: "Product1", stock: 0 },
   { id: 2, name: "Product2", stock: 5 },
-  { id: 3, name: "Product3", stock: 10 }
+  { id: 3, name: "Product3", stock: 10 },
 ];
 
+if (data8[0].stock == 0) {
+  data8[0].isAvilable = false;
+}
 
 // ============
 // 35-masala:
 //Massivdagi har bir obyektning status qiymatini "Inactive" qilib yangilang, lekin birinchi obyektni "Active" qoldiring.
 let data9 = [
-    { id: 1, name: "Ali", status: "Pending" },
-    { id: 2, name: "Vali", status: "Active" },
-    { id: 3, name: "Sami", status: "Completed" }
-  ];
-  
+  { id: 1, name: "Ali", status: "Pending" },
+  { id: 2, name: "Vali", status: "Active" },
+  { id: 3, name: "Sami", status: "Completed" },
+];
+
+data9.forEach((userId) => {
+  if (userId.id > 1) {
+    userId.status = "Inactive";
+  } else {
+    userId.status = "Active";
+  }
+});
+
 // ============
 // 36-masala:
 //Massivdagi obyektlarning price qiymati 500 dan katta bo'lgan obyektlarning isExpensive qiymatini true qilib belgilang.
 let data10 = [
   { id: 1, name: "Product1", price: 600 },
   { id: 2, name: "Product2", price: 400 },
-  { id: 3, name: "Product3", price: 800 }
+  { id: 3, name: "Product3", price: 800 },
 ];
-
-
+data10.forEach((check) => {
+  if (check.price > 500) {
+    check.isExpensive = true;
+  }
+});
 // ============
 // 37-masala:
 //2-obyektning salary qiymati >= 1000 bo'lsa, "High salary" degan yangi maydon qo'shing va qiymatini true qilib belgilang.
 let data11 = [
   { id: 1, name: "Ali", salary: 900 },
   { id: 2, name: "Vali", salary: 1000 },
-  { id: 3, name: "Sami", salary: 800 }
+  { id: 3, name: "Sami", salary: 800 },
 ];
 
+if (data11[1].salary >= 1000) {
+  data11[1]["High salary"] = true;
+}
 
 // ============
 // 38-masala:
@@ -473,9 +518,12 @@ let data11 = [
 let data12 = [
   { id: 1, name: "Vali", role: "user" },
   { id: 2, name: "Sami", role: "user" },
-  { id: 3, name: "Ali", role: "guest" }
+  { id: 3, name: "Ali", role: "guest" },
 ];
 
+if (data12[2].name == "Ali") {
+  data12.isManager = true;
+}
 
 // ============
 // 39-masala:
@@ -483,9 +531,14 @@ let data12 = [
 let data13 = [
   { id: 1, name: "Ali", age: 17 },
   { id: 2, name: "Vali", age: 20 },
-  { id: 3, name: "Sami", age: 16 }
+  { id: 3, name: "Sami", age: 16 },
 ];
 
+data13.forEach((user) => {
+  if (user.age < 18) {
+    user.isUnderage = true;
+  }
+});
 
 // ============
 // 40-masala:
@@ -493,9 +546,14 @@ let data13 = [
 let data14 = [
   { id: 1, name: "Product1", stock: 5 },
   { id: 2, name: "Product2", stock: 15 },
-  { id: 3, name: "Product3", stock: 8 }
+  { id: 3, name: "Product3", stock: 8 },
 ];
 
+data14.forEach((check) => {
+  if (check.stock < 10) {
+    check.lowStock = true;
+  }
+});
 
 // ============
 // 41-masala:
@@ -503,9 +561,8 @@ let data14 = [
 let data15 = [
   { id: 1, name: "Ali", role: "admin" },
   { id: 2, name: "Vali", role: "user" },
-  { id: 3, name: "Sami", role: "supervisor" }
+  { id: 3, name: "Sami", role: "supervisor" },
 ];
-
 
 // ============
 // 42-masala:
@@ -513,9 +570,8 @@ let data15 = [
 let data16 = [
   { id: 1, name: "Ali", status: "Pending" },
   { id: 2, name: "Vali", status: "Completed" },
-  { id: 3, name: "Sami", status: "Pending" }
+  { id: 3, name: "Sami", status: "Pending" },
 ];
-
 
 // ============
 // 43-masala:
@@ -523,9 +579,8 @@ let data16 = [
 let data17 = [
   { id: 1, name: "Ali", city: "Samarqand" },
   { id: 2, name: "Vali", city: "Namangan" },
-  { id: 3, name: "Sami", city: "Toshkent" }
+  { id: 3, name: "Sami", city: "Toshkent" },
 ];
-
 
 // ============
 // 44-masala:
@@ -533,9 +588,8 @@ let data17 = [
 let data18 = [
   { id: 1, name: "Ali", score: 70 },
   { id: 2, name: "Vali", score: 90 },
-  { id: 3, name: "Sami", score: 40 }
+  { id: 3, name: "Sami", score: 40 },
 ];
-
 
 // ============
 // 45-masala:
@@ -543,9 +597,8 @@ let data18 = [
 let data19 = [
   { id: 1, name: "Product1", price: 1200 },
   { id: 2, name: "Product2", price: 800 },
-  { id: 3, name: "Product3", price: 1500 }
+  { id: 3, name: "Product3", price: 1500 },
 ];
-
 
 // ============
 // 46-masala:
@@ -553,9 +606,8 @@ let data19 = [
 let data20 = [
   { id: 1, name: "Ali", salary: 1000 },
   { id: 2, name: "Vali", salary: 1500 },
-  { id: 3, name: "Sami", salary: 2000 }
+  { id: 3, name: "Sami", salary: 2000 },
 ];
-
 
 // ============
 // 47-masala:
@@ -563,9 +615,8 @@ let data20 = [
 let data21 = [
   { id: 1, name: "Ali" },
   { id: 2, name: "Vali" },
-  { id: 3, name: "Sami" }
+  { id: 3, name: "Sami" },
 ];
-
 
 // ============
 // 48-masala:
@@ -573,9 +624,8 @@ let data21 = [
 let data22 = [
   { id: 1, name: "Product1", stock: 5 },
   { id: 2, name: "Product2", stock: 0 },
-  { id: 3, name: "Product3", stock: 10 }
+  { id: 3, name: "Product3", stock: 10 },
 ];
-
 
 // ============
 // 49-masala:
@@ -583,9 +633,8 @@ let data22 = [
 let data23 = [
   { id: 1, name: "Product1", price: 1200 },
   { id: 2, name: "Product2", price: 800 },
-  { id: 3, name: "Product3", price: 1000 }
+  { id: 3, name: "Product3", price: 1000 },
 ];
-
 
 // ============
 // 50-masala:
@@ -593,9 +642,8 @@ let data23 = [
 let data24 = [
   { id: 1, name: "Ali" },
   { id: 2, name: "Vali" },
-  { id: 3, name: "Sami" }
+  { id: 3, name: "Sami" },
 ];
-
 
 // ============
 // 51-masala:
@@ -603,9 +651,8 @@ let data24 = [
 let data25 = [
   { id: 1, name: "Ali", level: "Beginner" },
   { id: 2, name: "Vali" },
-  { id: 3, name: "Sami" }
+  { id: 3, name: "Sami" },
 ];
-
 
 // ============
 // 52-masala:
@@ -613,9 +660,8 @@ let data25 = [
 let data26 = [
   { id: 1, name: "Ali", score: 75 },
   { id: 2, name: "Vali", score: 85 },
-  { id: 3, name: "Sami", score: 90 }
+  { id: 3, name: "Sami", score: 90 },
 ];
-
 
 // ============
 // 53-masala:
@@ -623,9 +669,8 @@ let data26 = [
 let data27 = [
   { id: 1, name: "Ali", role: "admin" },
   { id: 2, name: "Vali", role: "user" },
-  { id: 3, name: "Sami", role: "admin" }
+  { id: 3, name: "Sami", role: "admin" },
 ];
-
 
 // ============
 // 54-masala:
@@ -633,9 +678,8 @@ let data27 = [
 let data28 = [
   { id: 1, name: "Ali" },
   { id: 2, name: "Vali" },
-  { id: 3, name: "Sami" }
+  { id: 3, name: "Sami" },
 ];
-
 
 // ============
 // 55-masala:
@@ -643,5 +687,5 @@ let data28 = [
 let data29 = [
   { id: 1, name: "Ali", isVerified: false },
   { id: 2, name: "Vali", isVerified: true },
-  { id: 3, name: "Sami", isVerified: false }
+  { id: 3, name: "Sami", isVerified: false },
 ];
