@@ -1,6 +1,7 @@
-let users = [
-    { name: "Ali", city: "Toshkent" },
-    { name: "Vali", city: "Samarqand" },
-    { name: "Sami", city: "Buxoro" },
-  ];
-  console.log(users[1].city)
+let users4 = [{ name: "Ali" }, { name: "Vali" }, { name: "Sami" }];
+
+users4.forEach(user => {
+    user.isVerified = false
+})
+
+console.log(users4)
