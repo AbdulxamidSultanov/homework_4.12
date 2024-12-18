@@ -564,6 +564,10 @@ let data15 = [
   { id: 3, name: "Sami", role: "supervisor" },
 ];
 
+data15[0].role = "guest";
+data15[data15.length - 1].role = "guest";
+console.log(data15);
+
 // ============
 // 42-masala:
 //Agar biror obyektning status qiymati "Pending" bo'lsa, "isPending" degan maydon qo'shib, true qilib belgilang.
@@ -572,6 +576,12 @@ let data16 = [
   { id: 2, name: "Vali", status: "Completed" },
   { id: 3, name: "Sami", status: "Pending" },
 ];
+
+data16.forEach((user) => {
+  if (user.status === "Pending") {
+    user.isPending = true;
+  }
+});
 
 // ============
 // 43-masala:
@@ -582,6 +592,10 @@ let data17 = [
   { id: 3, name: "Sami", city: "Toshkent" },
 ];
 
+if ((data17[2].city = "Toshkent")) {
+  data17[2].city = "Buxoro";
+}
+
 // ============
 // 44-masala:
 //Oxirgi obyektning score qiymati < 50 bo'lsa, "failed" maydonini qo'shib, qiymatini true qilib belgilang.
@@ -590,6 +604,10 @@ let data18 = [
   { id: 2, name: "Vali", score: 90 },
   { id: 3, name: "Sami", score: 40 },
 ];
+
+if (data18[data18[length - 1].score < 50]) {
+  data18["failed"] = true;
+}
 
 // ============
 // 45-masala:
@@ -600,6 +618,13 @@ let data19 = [
   { id: 3, name: "Product3", price: 1500 },
 ];
 
+data19.forEach((product) => {
+  data19.discount = 0;
+  if (product.price > 1000) {
+    data19.disctount = 20;
+  }
+});
+
 // ============
 // 46-masala:
 // Massivdagi obyektlarning salary qiymatini 10% ga oshiring.
@@ -608,6 +633,11 @@ let data20 = [
   { id: 2, name: "Vali", salary: 1500 },
   { id: 3, name: "Sami", salary: 2000 },
 ];
+
+const result2 = data20.map((user) => {
+  user.salary = user.salary + user.salary / 10;
+  return user;
+});
 
 // ============
 // 47-masala:
@@ -618,6 +648,9 @@ let data21 = [
   { id: 3, name: "Sami" },
 ];
 
+data21[0].name += " - employee";
+data21[1].name += " - employee";
+
 // ============
 // 48-masala:
 //Massivdagi obyektlarning isAvailable maydonini o'zgartirib, stock qiymati > 0 bo'lganlarga true, qolganlarga false qilib belgilang.
@@ -626,6 +659,13 @@ let data22 = [
   { id: 2, name: "Product2", stock: 0 },
   { id: 3, name: "Product3", stock: 10 },
 ];
+
+data22.forEach((product) => {
+  product.isAvilable = false;
+  if (product.stock > 0) {
+    product.isAvilable = true;
+  }
+});
 
 // ============
 // 49-masala:
@@ -636,6 +676,10 @@ let data23 = [
   { id: 3, name: "Product3", price: 1000 },
 ];
 
+if(data23[0].price > 1000){
+  data23[0].price = 900
+}
+
 // ============
 // 50-masala:
 //Oxirgi obyektga yangi updatedAt maydonini qo'shing va qiymatini "2024-07-10" qilib belgilang.
@@ -644,6 +688,8 @@ let data24 = [
   { id: 2, name: "Vali" },
   { id: 3, name: "Sami" },
 ];
+
+data24[data24.length - 1].updateAt = "2024-07-10"
 
 // ============
 // 51-masala:
@@ -654,6 +700,8 @@ let data25 = [
   { id: 3, name: "Sami" },
 ];
 
+data25[2].level = "Intermediate"
+
 // ============
 // 52-masala:
 //Agar biror obyektning score qiymati 80 dan katta bo'lsa, "isTop" qiymatini true qilib belgilang.
@@ -663,6 +711,11 @@ let data26 = [
   { id: 3, name: "Sami", score: 90 },
 ];
 
+data26.forEach(user => {
+  if(user.score > 80){
+    user.isTop = true
+  }
+})
 // ============
 // 53-masala:
 //Massivdagi obyektlardan role qiymati "admin" bo'lgan obyektlarni topib, ularning privileges qiymatini "full" qilib belgilang.
@@ -671,6 +724,12 @@ let data27 = [
   { id: 2, name: "Vali", role: "user" },
   { id: 3, name: "Sami", role: "admin" },
 ];
+
+data27.forEach(user => {
+  if(data27.role == "admin"){
+    data27.privileges = "full"
+  }
+})
 
 // ============
 // 54-masala:
@@ -681,6 +740,8 @@ let data28 = [
   { id: 3, name: "Sami" },
 ];
 
+data28[data28.length - 1].name += " (completed)"
+
 // ============
 // 55-masala:
 //Agar birinchi obyektning isVerified qiymati false bo'lsa, uni true qilib belgilang.
@@ -689,3 +750,7 @@ let data29 = [
   { id: 2, name: "Vali", isVerified: true },
   { id: 3, name: "Sami", isVerified: false },
 ];
+
+if(data29[0].isVerified == false){
+  data29[0].isVerified == true
+}
